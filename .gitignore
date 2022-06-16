@@ -1,33 +1,55 @@
 HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+springboot/target/
+springboot/!.mvn/wrapper/maven-wrapper.jar
+springboot/!**/src/main/**/target/
+springboot/!**/src/test/**/target/
 
 ### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+springboot/.apt_generated
+springboot/.classpath
+springboot/.factorypath
+springboot/.project
+springboot/.settings
+springboot/.springBeans
+springboot/.sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+springboot/.idea
+springboot/*.iws
+springboot/*.iml
+springboot/*.ipr
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+springboot/nbproject/private/
+springboot/nbbuild/
+springboot/dist/
+springboot/nbdist/
+springboot/.nb-gradle/
+springboot/build/
+springboot/!**/src/main/**/build/
+springboot/!**/src/test/**/build/
 
 ### VS Code ###
-.vscode/
+react-app/.vscode/
+
+# dependencies
+react-app/node_modules
+react-app/.pnp
+react-app/.pnp.js
+
+# testing
+react-app/coverage
+
+# production
+react-app/build
+
+# misc
+react-app/.DS_Store
+react-app/.env.local
+react-app/.env.development.local
+react-app/.env.test.local
+react-app/.env.production.local
+
+react-app/npm-debug.log*
+react-app/yarn-debug.log*
+react-app/yarn-error.log*
