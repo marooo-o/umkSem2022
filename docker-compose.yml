@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  register_app:
+    build: ./python-app
+    container_name: register
+    environment:
+      DEBUG: 1
+    command: python app.py
+    ports:
+      - 5000:5000
+    restart: always
