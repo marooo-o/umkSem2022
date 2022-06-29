@@ -1,12 +1,41 @@
 version: "3"
 
 services:
-  register_app:
+  register_backend:
     build: ./python-app
-    container_name: register
+    container_name: register_backend
     environment:
       DEBUG: 1
     command: python app.py
     ports:
-      - 5000:5000
+      - "5000"
     restart: always
+  
+  register_frontend:
+    build: ./angular-app
+    container_name: register_frontend
+    command: ng serve --host 0.0.0.0 --serve-path=/register/
+    ports:
+      - "4200"
+    restart: always
+  
+  # login_app:
+  #   build: ./springboot
+  #   container_name: login
+  #   ports:
+  #     - "8080"
+  #   restart: always
+  
+  login_frontend:
+    build: ./react-app
+    container_name: login_frontend
+    command: npm start
+    ports:
+      - "3000"
+    restart: always
+  
+  proxy:
+    build: ./proxy
+    container_name: proxy
+    ports:
+      - 80:80
