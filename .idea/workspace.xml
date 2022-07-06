@@ -4,14 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc6724d0-5a64-4e7d-9118-580d2bd13eb8" name="Changes" comment="updated gitignore, created react app" />
+    <list default="true" id="cc6724d0-5a64-4e7d-9118-580d2bd13eb8" name="Changes" comment="updated gitignore, created react app">
+      <change afterPath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Model/User.java" afterDir="false" />
+    </list>
+    <list id="d399c5cd-a254-4620-a182-fdc3b6911eee" name="Changes by DMN" comment="">
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2AfVl4OgzEKlwOuT5RLZJyOoUeW" />
   <component name="ProjectViewState">
@@ -22,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../praca/clientcom-mobile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -34,6 +49,11 @@
       <updated>1655400790214</updated>
       <workItem from="1655400796707" duration="1159000" />
       <workItem from="1655458832450" duration="31000" />
+      <workItem from="1657037288275" duration="502000" />
+      <workItem from="1657037942571" duration="28000" />
+      <workItem from="1657038237214" duration="1493000" />
+      <workItem from="1657040116262" duration="60000" />
+      <workItem from="1657041558359" duration="73000" />
     </task>
     <task id="LOCAL-00001" summary="changed architecture">
       <created>1655400960881</created>
@@ -65,7 +85,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed architecture" />
