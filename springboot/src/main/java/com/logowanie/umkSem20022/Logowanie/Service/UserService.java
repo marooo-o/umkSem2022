@@ -11,5 +11,8 @@ public interface UserService {
     @Query("{'email':?0}")
     User getUserByEmail(String Email);
     List<User> findAllUsers();
+    @Query("{'email':?0, 'password':?1}")
+
+    User loginByEmailAndPassword(String email, String[] password);
 
 }

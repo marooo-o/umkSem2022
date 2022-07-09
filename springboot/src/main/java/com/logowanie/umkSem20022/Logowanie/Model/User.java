@@ -19,10 +19,19 @@ public class User {
 
     }
 
-    public User(String _id, String email, String[] password) {
+    public User(String _id, String email, String[] password, boolean confirmed) {
         this._id = _id;
         this.email = email;
         this.password = password;
+        this.confirmed = confirmed;
+    }
+
+    public boolean isConfirmed() {
+        return confirmed;
+    }
+
+    public void setConfirmed(boolean confirmed) {
+        this.confirmed = confirmed;
     }
 
     public String get_id() {
