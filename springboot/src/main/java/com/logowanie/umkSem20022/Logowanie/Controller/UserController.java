@@ -1,17 +1,15 @@
 package com.logowanie.umkSem20022.Logowanie.Controller;
 
-import com.logowanie.umkSem20022.Logowanie.Model.Chuj;
-import com.logowanie.umkSem20022.Logowanie.Repositories.UserRepository;
+
 import com.logowanie.umkSem20022.security.AuthenticationRequest;
 import com.logowanie.umkSem20022.security.AuthenticationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 
 @RestController
 @RequestMapping("/Spring")
@@ -19,14 +17,12 @@ public class UserController {
 
 
     @Autowired
-    private UserRepository userRepository;
-    @Autowired
     private AuthenticationManager authenticationManager;
 
     @PostMapping("/login")
     public ResponseEntity<?> authenticateClient(@RequestBody AuthenticationRequest authenticationRequest){
         String email = authenticationRequest.getName();
-        Chuj[] password = authenticationRequest.getPassword();
+        String[] password = authenticationRequest.getPassword();
 
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));

@@ -1,11 +1,9 @@
 package com.logowanie.umkSem20022.security;
 
-import com.logowanie.umkSem20022.Logowanie.Model.Chuj;
-
 public class AuthenticationRequest {
 
     private String email;
-    private Chuj[] password;
+    private String[] password;
 
     public AuthenticationRequest() {
     }
@@ -18,7 +16,7 @@ public class AuthenticationRequest {
         this.email = email;
     }
 
-    public Chuj[] getPassword() {
+    public String[] getPassword() {
         return password;
     }
 
