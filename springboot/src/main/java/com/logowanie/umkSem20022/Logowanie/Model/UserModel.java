@@ -11,6 +11,7 @@ public class UserModel {
     private String _id;
     private String email;
     private String[] password;
+    private String name;
     private boolean confirmed;
 
     public UserModel(){

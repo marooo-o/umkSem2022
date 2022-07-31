@@ -32,6 +32,6 @@ public class UserController {
 
 
 
-        return ResponseEntity.ok(new AuthenticationResponse(email));
+        return ResponseEntity.ok(new AuthenticationResponse("succes login for user: " + email));
     }
 }

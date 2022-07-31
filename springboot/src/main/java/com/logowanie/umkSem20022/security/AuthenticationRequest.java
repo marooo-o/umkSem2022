@@ -12,10 +12,6 @@ public class AuthenticationRequest {
         return email;
     }
 
-    public void setName(String email) {
-        this.email = email;
-    }
-
     public String[] getPassword() {
         return password;
     }
