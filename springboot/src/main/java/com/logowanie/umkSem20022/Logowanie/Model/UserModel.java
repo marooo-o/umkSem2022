@@ -3,11 +3,9 @@ package com.logowanie.umkSem20022.Logowanie.Model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Arrays;
-
 
 @Document(collection = "user")
-public class User {
+public class UserModel {
 
     @Id
     private String _id;
@@ -15,11 +13,11 @@ public class User {
     private String[] password;
     private boolean confirmed;
 
-    public User(){
+    public UserModel(){
 
     }
 
-    public User(String _id, String email, String[] password, boolean confirmed) {
+    public UserModel(String _id, String email, String[] password, boolean confirmed) {
         this._id = _id;
         this.email = email;
         this.password = password;
@@ -58,12 +56,5 @@ public class User {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "_id='" + _id + '\'' +
-                ", email='" + email + '\'' +
-                ", password=" + Arrays.toString(password) +
-                '}';
-    }
+
 }

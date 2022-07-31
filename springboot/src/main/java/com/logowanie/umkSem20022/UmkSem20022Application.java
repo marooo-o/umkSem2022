@@ -1,9 +1,8 @@
 package com.logowanie.umkSem20022;
 
 
-import com.logowanie.umkSem20022.Logowanie.Service.Impl.UserServiceImpl;
+//import com.logowanie.umkSem20022.Logowanie.Service.Impl.UserServiceImpl;
 import com.logowanie.umkSem20022.Logowanie.Service.UserService;
-//import com.logowanie.umkSem20022.config.SecurityConfig;
 import org.springframework.boot.SpringApplication;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,10 +24,10 @@ public class UmkSem20022Application {
 
 
 
-	@Bean
-	public UserService userService(){
-		return new UserServiceImpl();
-	}
+//	@Bean
+//	public UserService userService(){
+//		return new UserServiceImpl();
+//	}
 
 
 //	@Bean

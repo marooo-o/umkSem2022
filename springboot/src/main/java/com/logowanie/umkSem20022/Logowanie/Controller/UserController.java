@@ -1,12 +1,15 @@
 package com.logowanie.umkSem20022.Logowanie.Controller;
 
-import com.logowanie.umkSem20022.Logowanie.Model.User;
-import com.logowanie.umkSem20022.Logowanie.Service.UserService;
+import com.logowanie.umkSem20022.Logowanie.Model.Chuj;
+import com.logowanie.umkSem20022.Logowanie.Repositories.UserRepository;
+import com.logowanie.umkSem20022.security.AuthenticationRequest;
+import com.logowanie.umkSem20022.security.AuthenticationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,25 +17,25 @@ import java.util.List;
 @RequestMapping("/Spring")
 public class UserController {
 
-//    private UserService userService;
+
     @Autowired
-    UserService userService;
+    private UserRepository userRepository;
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @PostMapping("/login")
+    public ResponseEntity<?> authenticateClient(@RequestBody AuthenticationRequest authenticationRequest){
+        String email = authenticationRequest.getName();
+        Chuj[] password = authenticationRequest.getPassword();
+
+        try {
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
 
-    public UserController(UserService userService){
-        super();
-        this.userService = userService;
-    }
-
-    @GetMapping("/email")
-    public User getUserByEmail(String email){
-
-        return userService.getUserByEmail(email);
-    }
-
-    @GetMapping("/getall")
-    public List<User> findAllUsers(){
-        return userService.findAllUsers();
+        return ResponseEntity.ok(new AuthenticationResponse(email));
     }
 }

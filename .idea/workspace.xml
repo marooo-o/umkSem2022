@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc6724d0-5a64-4e7d-9118-580d2bd13eb8" name="Changes" comment="updated gitignore, created react app">
-      <change afterPath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/Logowanie/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/UmkSem20022Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/logowanie/umkSem20022/UmkSem20022Application.java" afterDir="false" />
     </list>
-    <list id="d399c5cd-a254-4620-a182-fdc3b6911eee" name="Changes by DMN" comment="">
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list id="d399c5cd-a254-4620-a182-fdc3b6911eee" name="Changes by DMN" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +55,7 @@
       <workItem from="1657038237214" duration="1493000" />
       <workItem from="1657040116262" duration="60000" />
       <workItem from="1657041558359" duration="73000" />
+      <workItem from="1659180396475" duration="24000" />
     </task>
     <task id="LOCAL-00001" summary="changed architecture">
       <created>1655400960881</created>
