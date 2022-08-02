@@ -10,7 +10,7 @@ const testController = require('./controllers/test.js');
 const newsController = require('./controllers/news.js');
 
 server.use('/test', testController);
-server.use('/news', newsController);
+server.use('/news-api', newsController);
 
 const port = process.env.PORT | 3000;
 

@@ -34,6 +34,13 @@ services:
       - "3000"
     restart: always
   
+  news_backend:
+    build: ./node-app
+    container_name: news_backend
+    ports:
+      - "3000"
+    restart: always
+  
   proxy:
     build: ./proxy
     container_name: proxy
