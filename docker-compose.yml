@@ -19,12 +19,12 @@ services:
       - "4200"
     restart: always
   
-  # login_app:
-  #   build: ./springboot
-  #   container_name: login
-  #   ports:
-  #     - "8080"
-  #   restart: always
+  login_app:
+    build: ./springboot
+    container_name: login
+    ports:
+      - "8080"
+    restart: always
   
   login_frontend:
     build: ./react-app
