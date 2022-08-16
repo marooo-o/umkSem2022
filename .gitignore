@@ -57,3 +57,6 @@ react-app/yarn-error.log*
 ### Python ###
 venv
 __pycache__
+
+# Node
+node-app/node_modules/
