@@ -11,6 +11,7 @@ class BaseConfig:
     # WTF_CSRF_ENABLED = True
     # DEBUG_TB_ENABLED = False
     # DEBUG_TB_INTERCEPT_REDIRECTS = False
+    # APPLICATION_ROOT = '/register-api'
 
     # mail settings
     MAIL_SERVER = 'smtp.googlemail.com'
