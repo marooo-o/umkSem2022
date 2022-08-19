@@ -19,9 +19,9 @@ services:
       - "4200"
     restart: always
   
-  login_app:
+  login_backend:
     build: ./springboot
-    container_name: login
+    container_name: login_backend
     ports:
       - "8080"
     restart: always
