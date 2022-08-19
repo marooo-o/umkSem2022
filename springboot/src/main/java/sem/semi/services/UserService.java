@@ -1,8 +1,6 @@
 package sem.semi.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -16,12 +14,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
-import sem.semi.entities.UserEntity;
 import sem.semi.JSON.LoginModel;
 import sem.semi.JSON.PassModel;
+import sem.semi.entities.UserEntity;
 import sem.semi.repositories.UserRepository;
 import sem.semi.security.JwtTokenUtil;
 
@@ -111,4 +107,13 @@ public class UserService implements UserDetailsService{
 
         return new User(email, password[number], authorityList);
     }
+
+    public int getPassLen(String email) {
+
+        UserEntity user1 = userRepository.findUserModelByEmail(email);
+        String[] pass = user1.getPass();
+        int dupa = pass.length;
+        return dupa;
+    }
+
 }
