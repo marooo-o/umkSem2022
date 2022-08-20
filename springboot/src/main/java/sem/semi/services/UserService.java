@@ -1,6 +1,7 @@
 package sem.semi.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -64,9 +65,11 @@ public class UserService implements UserDetailsService{
                 }
                 UserDetails userDetails = loadUserByUsername(emailWithNumbers[4]);
                 String token = jwtTokenUtil.generateToken(userDetails);
+
                 responseMap.put("error", false);
                 responseMap.put("message", "Logged In");
                 responseMap.put("token", token);
+
                 return ResponseEntity.ok(responseMap);
 
             } catch (DisabledException e) {
@@ -108,12 +111,25 @@ public class UserService implements UserDetailsService{
         return new User(email, password[number], authorityList);
     }
 
-    public int getPassLen(String email) {
-
+    public ResponseEntity getPassLen(String email) {
         UserEntity user1 = userRepository.findUserModelByEmail(email);
-        String[] pass = user1.getPass();
-        int dupa = pass.length;
-        return dupa;
+        if(user1 == null){
+           return new ResponseEntity(
+                    "User does not exist",
+                    HttpStatus.NOT_FOUND);
+        }
+        else{
+            if(!user1.isConfirmed()){
+                return new ResponseEntity(
+                        "User has not confirmed email address",
+                        HttpStatus.BAD_REQUEST);
+            }
+            else{
+                return new ResponseEntity(
+                        user1.getPass().length,
+                        HttpStatus.OK);
+            }
+        }
     }
 
 }

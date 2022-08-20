@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { BrowserRouter as Router, Routes as Switch, Route } from "react-router-dom";
 import LoginPage from './presentation/pages/login_page';
 import MainPage from './presentation/pages/main_page';
+import {getCookie} from './configuration/cookieExtension'
 
 const App = () => {
+  
   return (
     <Router>
       <Switch>

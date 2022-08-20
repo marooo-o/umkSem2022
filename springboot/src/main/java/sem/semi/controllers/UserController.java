@@ -1,5 +1,6 @@
 package sem.semi.controllers;
 
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -48,9 +49,8 @@ public class UserController {
     }
 
     @GetMapping("/auth/passlen")
-    public int passLen(String email) {
-        int dupa = userService.getPassLen(email);
-        return dupa;
+    public ResponseEntity passLen(@RequestHeader("email") String email) {
+        return userService.getPassLen(email);
     }
 
 }
