@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(originPatterns = "http://localhost:3000")
 @RequestMapping("/Spring")
 public class UserController {
 
