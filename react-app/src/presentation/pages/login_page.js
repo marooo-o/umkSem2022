@@ -139,9 +139,9 @@ const LoginPage = () => {
         <Container>
             <form onSubmit={formik.handleSubmit}>
                 <Column>
-                <button onClick={onRedirectToRegister}>
+                <a href="/register">
                     Zarejestruj się
-                </button>
+                </a>
                 <br/><br/><br/>
                 Email:
                     <label>
