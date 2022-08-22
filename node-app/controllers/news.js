@@ -3,7 +3,8 @@
 const express = require("express");
 
 const News = require('./../models/news.js');
-const auth = require('./../middleware/auth.js');
+const loggedin = require('./../middleware/auth.js').loggedin;
+const admin = require('./../middleware/auth.js').admin;
 
 const app = express();
 app.use(express.json());
@@ -41,7 +42,7 @@ app.get('/', (req, res) => {
 });
 
 // adds new news
-app.post('/', auth, (req, res) => {
+app.post('/', loggedin, (req, res) => {
     if(!(req.body.title && req.body.content)){
         return res.sendStatus(400);
     }
@@ -52,7 +53,7 @@ app.post('/', auth, (req, res) => {
         date: Date.now(),
         author: req.user.name
     });
-    console.log(news);
+
     news.save((err, news) => {
         if(err){
             console.log(err);
@@ -64,7 +65,7 @@ app.post('/', auth, (req, res) => {
 });
 
 // updates news with specified id
-app.patch('/', auth, (req, res) => {
+app.patch('/', [loggedin, admin], (req, res) => {
     // check if user is admin
 
     if(!(req.body.id && req.body.title && req.body.content)){
@@ -82,7 +83,7 @@ app.patch('/', auth, (req, res) => {
 });
 
 // deletes news with specified id
-app.delete('/', auth, (req, res) => {
+app.delete('/', [loggedin, admin], (req, res) => {
     // check if user is admin
 
     if(req.body.id == undefined){
