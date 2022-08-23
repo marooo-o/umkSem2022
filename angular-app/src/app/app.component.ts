@@ -14,6 +14,7 @@ import {UserService} from "../shared/services/user.service";
 export class AppComponent implements OnInit{
 
   registerForm: FormGroup;
+  information_to_user = '';
 
   constructor(private userService: UserService,
               private formBuilder: FormBuilder) {
@@ -29,14 +30,23 @@ export class AppComponent implements OnInit{
   }
 
   addNewUser(form: any) {
-    this.userService.registerUser(form.value.name, form.value.email, form.value.password).subscribe(
-      (response: any) => {
-        console.log("UDALO SIE");
+    if(form.value.confirmPassword == form.value.password)
+    {
+      this.userService.registerUser(form.value.name, form.value.email, form.value.password).subscribe(
+        (response: any) => {
+          console.log("UDALO SIE");
 
-      },
-      (error: HttpErrorResponse) => {
-        console.log("nie udalo sie");
-      }
-    );
+        },
+        (error: HttpErrorResponse) => {
+          this.information_to_user = '';
+          console.log("nie udalo sie");
+        }
+      );
+    }
+    else
+    {
+      this.information_to_user = 'Hasła się różnią';
+    }
+
   }
 }
