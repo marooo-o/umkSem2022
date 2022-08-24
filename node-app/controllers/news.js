@@ -9,8 +9,10 @@ const cors = require("cors");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
-app.options('*', cors());
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
 
 // returns all news
 app.get("/all", (req, res) => {
