@@ -36,6 +36,8 @@
             <input formControlName="confirmPassword" type="password" placeholder="Powtórz hasło">
           </div>
         </div>
+        <br>
+        <input type = "checkbox" (change)="toogleEditable($event)"> Admin
 
         <br>
         <span name="information_to_user"  style="color: red">{{information_to_user}}</span><br>
