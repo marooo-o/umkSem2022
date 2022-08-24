@@ -8,8 +8,6 @@ const admin = require("./../middleware/auth.js").admin;
 const cors = require("cors");
 
 const app = express();
-app.use(express.json());
-app.use(cors());
 
 // returns all news
 app.get("/all", (req, res) => {
