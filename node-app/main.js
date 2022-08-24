@@ -5,7 +5,6 @@ require('./dbcon.js').connect();
 
 const express = require('express');
 const server = express();
-const cors = require('cors');
 
 const newsController = require('./controllers/news.js');
 
