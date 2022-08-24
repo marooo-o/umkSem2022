@@ -9,8 +9,6 @@ const cors = require('cors');
 
 const newsController = require('./controllers/news.js');
 
-server.use(cors());
-server.use(express.json());
 server.use('/news-api', newsController);
 
 const port = process.env.PORT | 3000;
