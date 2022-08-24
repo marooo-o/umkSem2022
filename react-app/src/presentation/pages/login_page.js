@@ -86,7 +86,7 @@ const LoginPage = () => {
     });
 
     const onRedirectToRegister = () => {
-        navigate("/register")
+        window.location.replace("http://localhost:14200/register");
     }
 
 
