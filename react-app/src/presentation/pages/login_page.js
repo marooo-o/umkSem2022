@@ -89,8 +89,6 @@ const LoginPage = () => {
         navigate("http://localhost:14200//register")
     }
 
-
-
     const drawPasswordPositions = (max) => {
         var array = []
         for(var i=0; i<5;){
@@ -139,9 +137,9 @@ const LoginPage = () => {
         <Container>
             <form onSubmit={formik.handleSubmit}>
                 <Column>
-                <button onClick={onRedirectToRegister}>
+                <a href="/register">
                     Zarejestruj się
-                </button>
+                </a>
                 <br/><br/><br/>
                 Email:
                     <label>
