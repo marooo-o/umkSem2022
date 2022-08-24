@@ -6,6 +6,6 @@ export const instance = axios.create({
 });
 
 export const instanceNews = axios.create({
-    baseURL: "http://localhost:3000/news-api",
+    baseURL: "http://localhost:13000/news-api",
     withCredentials: false,
 });
