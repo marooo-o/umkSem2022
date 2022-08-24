@@ -85,10 +85,6 @@ const LoginPage = () => {
         },
     });
 
-    const onRedirectToRegister = () => {
-        navigate("http://localhost:14200//register")
-    }
-
     const drawPasswordPositions = (max) => {
         var array = []
         for(var i=0; i<5;){

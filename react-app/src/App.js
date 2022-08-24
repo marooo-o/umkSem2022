@@ -28,7 +28,7 @@ const App = () => {
       <Router>
         <Switch>
           {/* Public pages */}
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
 
           {/* User account */}
           <Route path="/home" element={<MainPage />} />

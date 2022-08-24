@@ -27,7 +27,7 @@ const MainPage = () => {
   }, []);
   const logout = () => {
     eraseCookie("Authorization");
-    navigate("/");
+    navigate("/login");
   };
 
   return (
