@@ -59,7 +59,9 @@ def register():
             for c in password
         ]
 
-        user = User(name=name, email=email, password=hashed_pass, confirmed=False)
+        authority = 'ROLE_ADMIN' if data['isAdmin'] else 'ROLE_USER'
+
+        user = User(name=name, email=email, password=hashed_pass, confirmed=False, authority=authority)
         user.save()
 
         token = generate_confirmation_token(app, user.email)
