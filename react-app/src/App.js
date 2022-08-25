@@ -6,16 +6,6 @@ import LoginPage from './presentation/pages/login_page';
 import MainPage from './presentation/pages/main_page';
 import {getCookie} from './presentation/configuration/cookieExtension'
 
-
-const App = () => {
-  
-  return (
-    <Router basename="login">
-      <Switch>
-        {/* Public pages */}
-        <Route path="/" element={<LoginPage />} />
-
-
 export const NewsContext = React.createContext({
   newses: [],
   setNewses: (data) => {},
