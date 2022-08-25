@@ -15,6 +15,7 @@ export class AppComponent implements OnInit{
 
   registerForm: FormGroup;
   information_to_user = '';
+  isAdmin = false;
 
   constructor(private userService: UserService,
               private formBuilder: FormBuilder) {
@@ -28,11 +29,18 @@ export class AppComponent implements OnInit{
         confirmPassword: new FormControl(),
       },{});
   }
+  toogleEditable(event: any) {
+    if (event.target.checked) {
+      this.isAdmin = true;
+    } else {
+      this.isAdmin = false;
+    }
+  }
 
   addNewUser(form: any) {
     if(form.value.confirmPassword == form.value.password)
     {
-      this.userService.registerUser(form.value.name, form.value.email, form.value.password).subscribe(
+      this.userService.registerUser(form.value.name, form.value.email, form.value.password, this.isAdmin).subscribe(
         (response: any) => {
           console.log("UDALO SIE");
 
