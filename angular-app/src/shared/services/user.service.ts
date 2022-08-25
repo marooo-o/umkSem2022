@@ -10,12 +10,13 @@ export class UserService {
   constructor( private httpClient: HttpClient ){
   }
 
-  registerUser(name: string, email: string, password: string): Observable<any> {
+  registerUser(name: string, email: string, password: string, isAdmin: boolean): Observable<any> {
 
     const body = {
       name,
       email,
-      password
+      password,
+      isAdmin
     };
 
     // const httpOptions = {
