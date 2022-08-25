@@ -3,10 +3,6 @@
 const mongoose = require('mongoose');
 
 const dataSchema = new mongoose.Schema({
-    name: {
-        required: false,
-        type: String
-    },
     email: {
         required: true,
         type: String
@@ -16,8 +12,16 @@ const dataSchema = new mongoose.Schema({
         type: [String]
     },
     confirmed: {
-        required: false,
+        required: true,
         type: Boolean
+    },
+    name: {
+        required: true,
+        type: String
+    },
+    authority: {
+        required: false,
+        type: String
     }
 }, {
     collection: 'user',

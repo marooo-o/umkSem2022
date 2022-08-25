@@ -3,11 +3,13 @@ import bcrypt
 from flask import Flask, request, jsonify, url_for, render_template
 from flask_mongoengine import MongoEngine
 from flask_mail import Mail
+from flask_cors import CORS, cross_origin
 from email_sending import send_email
 from token_gen import confirm_token, generate_confirmation_token
 
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object('config.BaseConfig')
 mail = Mail(app)
 db = MongoEngine()
@@ -19,14 +21,18 @@ class User(db.Document):
     email = db.StringField()
     password = db.ListField(db.StringField())
     confirmed = db.BooleanField()
+    authority = db.StringField()
 
 
-@app.route('/register', methods=['POST'])
+@app.route('/register-api/register', methods=['POST'])
+@cross_origin()
 def register():
     if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        password = request.form['password']
+        data = request.get_json()
+
+        name = data['name']
+        email = data['email']
+        password = data['password']
 
         users = User.objects.filter(name=name)
         if len(users) > 0:
@@ -67,11 +73,15 @@ def register():
             'mail': email,
             'message': 'User registered successfully'
         }
+
+        response = jsonify(all_data)
+
+        response.headers.add("Access-Control-Allow-Origin", "*")
         
-        return jsonify(all_data), 202
+        return response, 202
 
 
-@app.route('/register/<token>')
+@app.route('/register-api/register/<token>')
 def confirm_email(token):
     try:
         email = confirm_token(app, token)

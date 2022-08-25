@@ -3,7 +3,7 @@ import Header from "../components/header";
 import styled from 'styled-components';
 import {useFormik} from "formik";
 import { useNavigate } from 'react-router-dom';
-import instance from '../configuration/axiosInstance';
+import {instance} from '../configuration/axiosInstance';
 import {setCookie} from '../configuration/cookieExtension'
 
 const Container = styled.div`
@@ -84,12 +84,6 @@ const LoginPage = () => {
                 })
         },
     });
-
-    const onRedirectToRegister = () => {
-        navigate("/register")
-    }
-
-
 
     const drawPasswordPositions = (max) => {
         var array = []
